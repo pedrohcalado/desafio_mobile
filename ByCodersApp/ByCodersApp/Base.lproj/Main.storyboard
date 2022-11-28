@@ -53,6 +53,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0uq-fC-n3N"/>
+                    <connections>
+                        <outlet property="loginButton" destination="ouk-ga-Fdl" id="YG9-SV-mwj"/>
+                        <outlet property="signUpButton" destination="Rgf-Xn-T8w" id="8p6-Ia-7bP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Odn-ae-bq5">
-                                <rect key="frame" x="40" y="84" width="334" height="220"/>
+                                <rect key="frame" x="40" y="128" width="334" height="220"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stf-CV-Djh">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -86,6 +90,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Fazer login"/>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="4fI-vV-b1r" eventType="touchUpInside" id="qNS-DN-Phj"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Erro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsw-lQ-YDa">
                                         <rect key="frame" x="0.0" y="180" width="334" height="40"/>
@@ -110,10 +117,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3RA-ok-Vbb"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="stf-CV-Djh" id="Gvu-L0-J4H"/>
+                        <outlet property="errorLabel" destination="qsw-lQ-YDa" id="yUg-oI-OdC"/>
+                        <outlet property="loginButton" destination="GLn-vq-AFg" id="QAZ-2f-ZlX"/>
+                        <outlet property="passwordTextField" destination="tAo-EF-CWo" id="syV-iv-asY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uY-uY-vhi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405" y="126"/>
+            <point key="canvasLocation" x="1593" y="122"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="G6j-dD-44L">
@@ -124,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0IP-O6-fXx">
-                                <rect key="frame" x="40" y="84" width="334" height="220"/>
+                                <rect key="frame" x="40" y="128" width="334" height="220"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbn-JB-ju9">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -143,6 +156,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Cadastrar"/>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="evC-l7-xWf" eventType="touchUpInside" id="C76-zf-Re7"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Erro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taj-Ad-IWd">
                                         <rect key="frame" x="0.0" y="180" width="334" height="40"/>
@@ -167,10 +183,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lOg-tT-gMj"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Jbn-JB-ju9" id="QOn-Hn-cu7"/>
+                        <outlet property="errorLabel" destination="taj-Ad-IWd" id="ZZA-UX-3Sa"/>
+                        <outlet property="passwordTextField" destination="o0s-0a-bPI" id="oo9-nO-UJv"/>
+                        <outlet property="registerButton" destination="zNF-kv-eQK" id="qgK-Mh-UdT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nl-3d-Yvy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-551"/>
+            <point key="canvasLocation" x="1586" y="-555"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Sgn-Wp-fln">
@@ -199,9 +221,10 @@
         <!--Navigation Controller-->
         <scene sceneID="cYM-JK-0NW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Vv-YM-y7j" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Vv-YM-y7j" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VWp-5d-Cmj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
