@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -15,21 +16,64 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.errorLabel.isHidden = true
+        setupDelegates()
+        hideErrorMessage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func validateFields() -> String? {
+        let emailCleaned = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let passwordCleaned = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        if emailCleaned == "" {
+            return "O e-mail é obrigatório."
+        }
+        
+        if passwordCleaned == "" {
+            return "A senha é obrigatória."
+        }
+        
+        if !emailCleaned.isValidEmail() {
+            return "Preencha com um e-mail válido."
+        }
+        if !passwordCleaned.isValidPassword() {
+            return "A senha deve conter pelo menos 8 caracteres, um número e um caracter especial."
+        }
+        
+        return nil
     }
-    */
+    
+    private func setupDelegates() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
     @IBAction func signUpTapped(_ sender: Any) {
+        let error = validateFields()
+        
+        if let error = error {
+            showError(error)
+            return
+        }
+        
+        hideErrorMessage()
+        createUser(email: emailTextField.text!, password: passwordTextField.text!)
+    }
+    
+    private func showError(_ message: String) {
+        errorLabel.isHidden = false
+        errorLabel.text = message
+    }
+    
+    private func hideErrorMessage() {
+        errorLabel.isHidden = true
+    }
+    
+    private func createUser(email: String, password: String) {
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        hideErrorMessage()
     }
     
 }
