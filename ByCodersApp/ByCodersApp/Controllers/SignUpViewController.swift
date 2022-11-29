@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -69,9 +70,33 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func createUser(email: String, password: String) {
-        
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+            if let _ = error {
+                self?.showError("Ocorreu um erro ao criar o usuário. Por favor, tente novamente.")
+                return
+            } else {
+                let db = Firestore.firestore()
+                db.collection("users").addDocument(data: [
+                    "email": email,
+                    "password": password,
+                    "uid": result!.user.uid
+                ]) { [weak self] error in
+                    if let _ = error { self?.showError("Erro ao salvar dados do usuário.") }
+                }
+                self?.goToHome()
+            }
+        }
     }
     
+    private func goToHome() {
+        let homeScreen = storyboard?.instantiateViewController(withIdentifier: NSLocalizedString("home-screen", comment: "")) as? HomeViewController
+        
+        view.window?.rootViewController = homeScreen
+        view.window?.makeKeyAndVisible()
+    }
+    
+    
+    // MARK: - Delegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         hideErrorMessage()
     }
