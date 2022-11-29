@@ -21,7 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         setupDelegates()
         hideErrorMessage()
     }
-    
 
     private func validateFields() -> String? {
         let emailCleaned = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -95,7 +94,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
           "email": email
           ])
     }
-    
     
     // MARK: - Delegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
