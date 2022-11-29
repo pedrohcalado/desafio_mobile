@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseAnalytics
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -75,7 +76,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self?.showError("Ocorreu um erro ao fazer login. Por favor, tente novamente.")
                 return
             }
-
+            
+            self?.sendLoginAnalyticsEvent(uid: result!.user.uid, email: email)
             self?.goToHome()
         }
     }
@@ -85,6 +87,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         view.window?.rootViewController = homeScreen
         view.window?.makeKeyAndVisible()
+    }
+    
+    private func sendLoginAnalyticsEvent(uid: String, email: String) {
+        Analytics.logEvent(AnalyticsEventLogin, parameters: [
+          "uid": uid,
+          "email": email
+          ])
     }
     
     
