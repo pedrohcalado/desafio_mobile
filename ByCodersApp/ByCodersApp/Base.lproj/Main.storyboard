@@ -197,7 +197,7 @@
         <!--Home View Controller-->
         <scene sceneID="Sgn-Wp-fln">
             <objects>
-                <viewController id="TUG-v3-Pp4" customClass="HomeViewController" customModule="ByCodersApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" id="TUG-v3-Pp4" customClass="HomeViewController" customModule="ByCodersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="96R-eM-wgo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
