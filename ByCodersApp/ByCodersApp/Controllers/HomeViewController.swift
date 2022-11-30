@@ -6,24 +6,42 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    @IBOutlet weak var mapView: MKMapView!
+    
+    private var locationManager: CLLocationManager!
+    private var currentLocation: CLLocation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // Check for Location Services
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        defer { currentLocation = locations.last }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if currentLocation == nil {
+            // Zoom to user location
+            if let userLocation = locations.last {
+                let viewRegion = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+                mapView.setRegion(viewRegion, animated: false)
+            }
+        }
     }
-    */
 
 }
