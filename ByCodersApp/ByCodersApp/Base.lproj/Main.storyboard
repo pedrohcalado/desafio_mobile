@@ -65,7 +65,7 @@
         <!--Login View Controller-->
         <scene sceneID="eMP-Uq-3s5">
             <objects>
-                <viewController id="4fI-vV-b1r" customClass="LoginViewController" customModule="ByCodersApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="4fI-vV-b1r" customClass="LoginViewController" customModule="ByCodersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4jY-bN-LrP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+final class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -83,15 +83,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 ]) { [weak self] error in
                     if let _ = error { self?.showError("Erro ao salvar dados do usuário.") }
                 }
-                self?.goToHome()
+                self?.goToLogin()
             }
         }
     }
     
-    private func goToHome() {
-        let homeScreen = storyboard?.instantiateViewController(withIdentifier: NSLocalizedString("home-screen", comment: "")) as? HomeViewController
+    private func goToLogin() {
+        let login = storyboard?.instantiateViewController(withIdentifier: NSLocalizedString("login-screen", comment: "")) as? LoginViewController
         
-        view.window?.rootViewController = homeScreen
+        view.window?.rootViewController = login
         view.window?.makeKeyAndVisible()
     }
     

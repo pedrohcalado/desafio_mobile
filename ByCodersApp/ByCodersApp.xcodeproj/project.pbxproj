@@ -27,6 +27,7 @@
 		65A45139293542CF0084F70F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A45138293542CF0084F70F /* BaseViewController.swift */; };
 		65A4513B2935610D0084F70F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65A4513A2935610D0084F70F /* GoogleService-Info.plist */; };
 		65CAC756293807C30066223B /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 65CAC755293807C30066223B /* SQLite */; };
+		65CAC75929380DF20066223B /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAC75829380DF20066223B /* SQLiteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		65A451362935417C0084F70F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		65A45138293542CF0084F70F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		65A4513A2935610D0084F70F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65CAC75829380DF20066223B /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		65A45100293500F80084F70F /* ByCodersApp */ = {
 			isa = PBXGroup;
 			children = (
+				65CAC75729380DBC0066223B /* Services */,
 				65A0509F29363AE500D53064 /* Utilities */,
 				65A0509029362B0400D53064 /* Extensions */,
 				65A45131293541450084F70F /* Controllers */,
@@ -177,6 +180,14 @@
 				65A451362935417C0084F70F /* HomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		65CAC75729380DBC0066223B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				65CAC75829380DF20066223B /* SQLiteService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65A45139293542CF0084F70F /* BaseViewController.swift in Sources */,
+				65CAC75929380DF20066223B /* SQLiteService.swift in Sources */,
 				65A45102293500F80084F70F /* AppDelegate.swift in Sources */,
 				65A0509229362B2500D53064 /* String+Utilities.swift in Sources */,
 				65A45133293541600084F70F /* SignUpViewController.swift in Sources */,

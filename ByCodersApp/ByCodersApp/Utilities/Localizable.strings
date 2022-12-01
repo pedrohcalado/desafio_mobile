@@ -1,1 +1,2 @@
 "home-screen" = "homeVC";
+"login-screen" = "loginVC";
