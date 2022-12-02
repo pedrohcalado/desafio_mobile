@@ -1,2 +1,3 @@
 "home-screen" = "homeVC";
 "login-screen" = "loginVC";
+"user-creation-error" = "Houve um erro ao criar o usuário, por favor tente novamente.";

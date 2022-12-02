@@ -60,7 +60,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: RootCoordinator {
     func navigateToSignup() {
-        let viewModel = SignUpViewModel(coordinator: self)
+        let service = FirebaseService()
+        let viewModel = SignUpViewModel(coordinator: self, service: service)
         let signupVC = SignUpViewController(viewModel: viewModel)
         navigation?.pushViewController(signupVC, animated: true)
     }

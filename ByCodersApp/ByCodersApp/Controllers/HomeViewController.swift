@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 //import CoreLocation
 
-final class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, Storyboarded {
+final class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     private var locationManager: CLLocationManager!

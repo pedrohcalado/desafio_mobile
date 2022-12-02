@@ -25,7 +25,6 @@
 		65CAC756293807C30066223B /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 65CAC755293807C30066223B /* SQLite */; };
 		65CAC75929380DF20066223B /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAC75829380DF20066223B /* SQLiteService.swift */; };
 		65CAC75C2939251A0066223B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAC75B293925190066223B /* Coordinator.swift */; };
-		65CAC760293927070066223B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAC75F293927070066223B /* Storyboarded.swift */; };
 		65CAC76329394CD50066223B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAC76229394CD50066223B /* BaseViewModel.swift */; };
 		65CAC76529394E240066223B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAC76429394E240066223B /* SignUpViewModel.swift */; };
 		65CAC767293951600066223B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAC766293951600066223B /* LoginViewModel.swift */; };
@@ -76,7 +75,6 @@
 		65A4513A2935610D0084F70F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65CAC75829380DF20066223B /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
 		65CAC75B293925190066223B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		65CAC75F293927070066223B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		65CAC76229394CD50066223B /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		65CAC76429394E240066223B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		65CAC766293951600066223B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				65CAC75B293925190066223B /* Coordinator.swift */,
-				65CAC75F293927070066223B /* Storyboarded.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -436,7 +433,6 @@
 				65A45104293500F80084F70F /* SceneDelegate.swift in Sources */,
 				65CAC767293951600066223B /* LoginViewModel.swift in Sources */,
 				65CAC769293952810066223B /* HomeViewModel.swift in Sources */,
-				65CAC760293927070066223B /* Storyboarded.swift in Sources */,
 				65A451372935417C0084F70F /* HomeViewController.swift in Sources */,
 				65CAC76529394E240066223B /* SignUpViewModel.swift in Sources */,
 				65CAC75C2939251A0066223B /* Coordinator.swift in Sources */,
