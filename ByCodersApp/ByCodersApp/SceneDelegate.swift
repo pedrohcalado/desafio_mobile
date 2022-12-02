@@ -66,7 +66,8 @@ extension SceneDelegate: RootCoordinator {
     }
     
     func navigateToLogin() {
-        let viewModel = LoginViewModel(coordinator: self)
+        let service = FirebaseService()
+        let viewModel = LoginViewModel(coordinator: self, service: service)
         let loginVC = LoginViewController(viewModel: viewModel)
         navigation?.pushViewController(loginVC, animated: true)
     }

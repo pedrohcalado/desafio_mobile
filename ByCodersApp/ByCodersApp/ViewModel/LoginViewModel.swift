@@ -5,8 +5,7 @@
 //  Created by Pedro Henrique Calado on 01/12/22.
 //
 
-import FirebaseFirestore
-import Firebase
+import Foundation
 
 protocol LoginViewModelProtocol {
     func login(email: String, password: String)
@@ -16,30 +15,25 @@ protocol LoginViewModelProtocol {
 
 class LoginViewModel: LoginViewModelProtocol {
     weak var coordinator: RootCoordinator?
-    
+    var service: LoginServiceProtocol?
     var showError: ((String) -> Void)?
     
-    init(coordinator: RootCoordinator) {
+    init(coordinator: RootCoordinator, service: LoginServiceProtocol) {
         self.coordinator = coordinator
+        self.service = service
     }
     
     func login(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
-            if let _ = error {
+        
+        service?.login(email: email, password: password) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.saveLoginDataInUserDefaults(uid: data!.user.uid)
+                self?.coordinator?.navigateToHome()
+            case .failure:
                 self?.showError?("Ocorreu um erro ao fazer login. Por favor, tente novamente.")
-                return
             }
-            self?.saveLoginDataInUserDefaults(uid: result!.user.uid)
-            self?.sendLoginAnalyticsEvent(uid: result!.user.uid, email: email)
-            self?.coordinator?.navigateToHome()
         }
-    }
-    
-    private func sendLoginAnalyticsEvent(uid: String, email: String) {
-        Analytics.logEvent(AnalyticsEventLogin, parameters: [
-          "uid": uid,
-          "email": email
-          ])
     }
     
     private func saveLoginDataInUserDefaults(uid: String) {

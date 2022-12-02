@@ -37,6 +37,7 @@
 		65CAC76D293A14D40066223B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CAC76C293A14D40066223B /* LoginViewController.xib */; };
 		65CAC76F293A159C0066223B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CAC76E293A159C0066223B /* HomeViewController.xib */; };
 		65CAC771293A15D60066223B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CAC770293A15D60066223B /* SignUpViewController.xib */; };
+		65D175C3293A203800A247E3 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175C2293A203800A247E3 /* FirebaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		65CAC76C293A14D40066223B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		65CAC76E293A159C0066223B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		65CAC770293A15D60066223B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		65D175C2293A203800A247E3 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				65CAC75829380DF20066223B /* SQLiteService.swift */,
+				65D175C2293A203800A247E3 /* FirebaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65A45139293542CF0084F70F /* BaseViewController.swift in Sources */,
+				65D175C3293A203800A247E3 /* FirebaseService.swift in Sources */,
 				65CAC76329394CD50066223B /* BaseViewModel.swift in Sources */,
 				65CAC75929380DF20066223B /* SQLiteService.swift in Sources */,
 				65A45102293500F80084F70F /* AppDelegate.swift in Sources */,
