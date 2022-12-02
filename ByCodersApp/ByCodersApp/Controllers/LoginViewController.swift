@@ -33,15 +33,6 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
-        let error = viewModel?.validateFields(
-            email: emailTextField.text,
-            password: passwordTextField.text)
-        
-        if let error = error {
-            showError(error)
-            return
-        }
-        
         hideErrorMessage()
         viewModel?.login(email: emailTextField.text!, password: passwordTextField.text!)
     }

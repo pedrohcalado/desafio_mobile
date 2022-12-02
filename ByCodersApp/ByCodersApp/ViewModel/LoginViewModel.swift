@@ -9,7 +9,6 @@ import Foundation
 
 protocol LoginViewModelProtocol {
     func login(email: String, password: String)
-    func validateFields(email: String?, password: String?) -> String?
     var showError: ((String) -> Void)? { get set }
 }
 
@@ -24,14 +23,17 @@ class LoginViewModel: LoginViewModelProtocol {
     }
     
     func login(email: String, password: String) {
-        
-        service?.login(email: email, password: password) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.saveLoginDataInUserDefaults(uid: data!.user.uid)
-                self?.coordinator?.navigateToHome()
-            case .failure:
-                self?.showError?("Ocorreu um erro ao fazer login. Por favor, tente novamente.")
+        if let error = validateFields(email: email, password: password) {
+            showError?(error)
+        } else {
+            service?.login(email: email, password: password) { [weak self] result in
+                switch result {
+                case .success(let data):
+                    self?.saveLoginDataInUserDefaults(uid: data!.user.uid)
+                    self?.coordinator?.navigateToHome()
+                case .failure:
+                    self?.showError?("Ocorreu um erro ao fazer login. Por favor, tente novamente.")
+                }
             }
         }
     }

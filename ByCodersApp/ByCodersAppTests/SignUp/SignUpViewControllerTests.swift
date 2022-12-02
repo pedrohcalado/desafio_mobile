@@ -59,7 +59,6 @@ class ViewModelSpy: SignUpViewModelProtocol {
     
     var showError: ((String) -> Void)?
     
-    
     private func validateFieldsWithError() -> String? {
         return "Error"
     }
