@@ -17,9 +17,6 @@
 		65A45104293500F80084F70F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A45103293500F80084F70F /* SceneDelegate.swift */; };
 		65A4510B293500FC0084F70F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A4510A293500FC0084F70F /* Assets.xcassets */; };
 		65A4510E293500FC0084F70F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A4510C293500FC0084F70F /* LaunchScreen.storyboard */; };
-		65A45119293500FD0084F70F /* ByCodersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A45118293500FD0084F70F /* ByCodersAppTests.swift */; };
-		65A45123293500FD0084F70F /* ByCodersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A45122293500FD0084F70F /* ByCodersAppUITests.swift */; };
-		65A45125293500FD0084F70F /* ByCodersAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A45124293500FD0084F70F /* ByCodersAppUITestsLaunchTests.swift */; };
 		65A45133293541600084F70F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A45132293541600084F70F /* SignUpViewController.swift */; };
 		65A451352935416E0084F70F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A451342935416E0084F70F /* LoginViewController.swift */; };
 		65A451372935417C0084F70F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A451362935417C0084F70F /* HomeViewController.swift */; };
@@ -38,6 +35,8 @@
 		65CAC76F293A159C0066223B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CAC76E293A159C0066223B /* HomeViewController.xib */; };
 		65CAC771293A15D60066223B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CAC770293A15D60066223B /* SignUpViewController.xib */; };
 		65D175C3293A203800A247E3 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175C2293A203800A247E3 /* FirebaseService.swift */; };
+		65D175C6293A28AD00A247E3 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175C5293A28AD00A247E3 /* SignUpViewControllerTests.swift */; };
+		65D175C9293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175C8293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +66,7 @@
 		65A4510D293500FC0084F70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65A4510F293500FC0084F70F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65A45114293500FD0084F70F /* ByCodersAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ByCodersAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65A45118293500FD0084F70F /* ByCodersAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCodersAppTests.swift; sourceTree = "<group>"; };
 		65A4511E293500FD0084F70F /* ByCodersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ByCodersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65A45122293500FD0084F70F /* ByCodersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCodersAppUITests.swift; sourceTree = "<group>"; };
-		65A45124293500FD0084F70F /* ByCodersAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCodersAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		65A45132293541600084F70F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		65A451342935416E0084F70F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		65A451362935417C0084F70F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +84,8 @@
 		65CAC76E293A159C0066223B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		65CAC770293A15D60066223B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		65D175C2293A203800A247E3 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		65D175C5293A28AD00A247E3 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
+		65D175C8293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +139,6 @@
 			children = (
 				65A45100293500F80084F70F /* ByCodersApp */,
 				65A45117293500FD0084F70F /* ByCodersAppTests */,
-				65A45121293500FD0084F70F /* ByCodersAppUITests */,
 				65A450FF293500F80084F70F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -178,18 +175,10 @@
 		65A45117293500FD0084F70F /* ByCodersAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				65A45118293500FD0084F70F /* ByCodersAppTests.swift */,
+				65D175C7293A2D9C00A247E3 /* Helpers */,
+				65D175C4293A288300A247E3 /* SignUp */,
 			);
 			path = ByCodersAppTests;
-			sourceTree = "<group>";
-		};
-		65A45121293500FD0084F70F /* ByCodersAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				65A45122293500FD0084F70F /* ByCodersAppUITests.swift */,
-				65A45124293500FD0084F70F /* ByCodersAppUITestsLaunchTests.swift */,
-			);
-			path = ByCodersAppUITests;
 			sourceTree = "<group>";
 		};
 		65A45131293541450084F70F /* Controllers */ = {
@@ -234,6 +223,22 @@
 				65CAC768293952810066223B /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		65D175C4293A288300A247E3 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				65D175C5293A28AD00A247E3 /* SignUpViewControllerTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		65D175C7293A2D9C00A247E3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				65D175C8293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +433,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65A45119293500FD0084F70F /* ByCodersAppTests.swift in Sources */,
+				65D175C6293A28AD00A247E3 /* SignUpViewControllerTests.swift in Sources */,
+				65D175C9293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,8 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65A45123293500FD0084F70F /* ByCodersAppUITests.swift in Sources */,
-				65A45125293500FD0084F70F /* ByCodersAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
