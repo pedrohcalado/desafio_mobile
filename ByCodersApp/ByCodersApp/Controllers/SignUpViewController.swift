@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseFirestore
 
 final class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -15,32 +13,37 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    private var viewModel: SignUpViewModelProtocol?
+    
+    init(viewModel: SignUpViewModelProtocol) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
         hideErrorMessage()
+        
+        viewModel?.showError = self.showErrorMessage
     }
     
-    private func validateFields() -> String? {
-        let emailCleaned = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let passwordCleaned = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+    @IBAction func signUpTapped(_ sender: Any) {
+        let error = viewModel?.validateFields(
+            email: emailTextField.text,
+            password: passwordTextField.text)
         
-        if emailCleaned == "" {
-            return "O e-mail é obrigatório."
+        if let error = error {
+            showErrorMessage(error)
+            return
         }
         
-        if passwordCleaned == "" {
-            return "A senha é obrigatória."
-        }
-        
-        if !emailCleaned.isValidEmail() {
-            return "Preencha com um e-mail válido."
-        }
-        if !passwordCleaned.isValidPassword() {
-            return "A senha deve conter pelo menos 8 caracteres, um número e um caracter especial."
-        }
-        
-        return nil
+        hideErrorMessage()
+        viewModel?.createUser(email: emailTextField.text!, password: passwordTextField.text!)
     }
     
     private func setupDelegates() {
@@ -48,51 +51,13 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
     }
     
-    @IBAction func signUpTapped(_ sender: Any) {
-        let error = validateFields()
-        
-        if let error = error {
-            showError(error)
-            return
-        }
-        
-        hideErrorMessage()
-        createUser(email: emailTextField.text!, password: passwordTextField.text!)
-    }
-    
-    private func showError(_ message: String) {
+    private func showErrorMessage(_ message: String) {
         errorLabel.isHidden = false
         errorLabel.text = message
     }
     
     private func hideErrorMessage() {
         errorLabel.isHidden = true
-    }
-    
-    private func createUser(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
-            if let _ = error {
-                self?.showError("Ocorreu um erro ao criar o usuário. Por favor, tente novamente.")
-                return
-            } else {
-                let db = Firestore.firestore()
-                db.collection("users").addDocument(data: [
-                    "email": email,
-                    "password": password,
-                    "uid": result!.user.uid
-                ]) { [weak self] error in
-                    if let _ = error { self?.showError("Erro ao salvar dados do usuário.") }
-                }
-                self?.goToLogin()
-            }
-        }
-    }
-    
-    private func goToLogin() {
-        let login = storyboard?.instantiateViewController(withIdentifier: NSLocalizedString("login-screen", comment: "")) as? LoginViewController
-        
-        view.window?.rootViewController = login
-        view.window?.makeKeyAndVisible()
     }
     
     

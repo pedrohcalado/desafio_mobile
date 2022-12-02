@@ -8,7 +8,13 @@
 import Foundation
 import SQLite
 
-class SQLiteService {
+protocol SQLiteServiceProtocol {
+    func createUserLocation(userLocation: UserLocation) -> Int64
+    func dropTables()
+    func initTables()
+}
+
+class SQLiteService: SQLiteServiceProtocol {
     
     let id = Expression<Int64>("id")
     let uid = Expression<String>("uid")

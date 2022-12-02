@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseViewController" customModule="ByCodersApp" customModuleProvider="target">
+            <connections>
+                <outlet property="loginButton" destination="7us-fd-Ccv" id="GbN-HW-YcT"/>
+                <outlet property="signUpButton" destination="2CA-N4-l4n" id="z77-i0-zxa"/>
+                <outlet property="view" destination="SBg-fR-3r7" id="8yx-RZ-6xD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="SBg-fR-3r7">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nMp-Mb-Grk">
+                    <rect key="frame" x="40" y="731" width="334" height="91"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7us-fd-Ccv">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="IH6-8k-8ki"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Fazer login"/>
+                            <connections>
+                                <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="DQ7-Nm-Shb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-N4-l4n">
+                            <rect key="frame" x="0.0" y="60" width="334" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Criar conta"/>
+                            <connections>
+                                <action selector="signUpTapped:" destination="-1" eventType="touchUpInside" id="Hf7-a0-QJT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="2CA-N4-l4n" firstAttribute="height" secondItem="7us-fd-Ccv" secondAttribute="height" multiplier="0.775" id="uFK-97-cla"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="qUn-kE-caE"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qUn-kE-caE" firstAttribute="trailing" secondItem="nMp-Mb-Grk" secondAttribute="trailing" constant="40" id="A5x-nx-U4b"/>
+                <constraint firstItem="qUn-kE-caE" firstAttribute="bottom" secondItem="nMp-Mb-Grk" secondAttribute="bottom" constant="40" id="Jsk-s3-iXN"/>
+                <constraint firstItem="nMp-Mb-Grk" firstAttribute="leading" secondItem="qUn-kE-caE" secondAttribute="leading" constant="40" id="THd-FV-SQE"/>
+            </constraints>
+            <point key="canvasLocation" x="312" y="-921"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

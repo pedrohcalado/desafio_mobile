@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="ByCodersApp" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="Llx-EF-ISL" id="ag1-7V-qFG"/>
+                <outlet property="errorLabel" destination="HVk-fc-5EP" id="6f4-XY-SxU"/>
+                <outlet property="passwordTextField" destination="BDw-BL-7fT" id="kht-pJ-hKq"/>
+                <outlet property="registerButton" destination="CDP-ai-JnU" id="RQM-tZ-0sn"/>
+                <outlet property="view" destination="jM1-sR-d3B" id="n5o-aE-X45"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="jM1-sR-d3B">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FnW-vM-2eB">
+                    <rect key="frame" x="40" y="84" width="334" height="220"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llx-EF-ISL">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDw-BL-7fT">
+                            <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDP-ai-JnU">
+                            <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="fsw-3M-WpP"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Cadastrar"/>
+                            <connections>
+                                <action selector="signUpTapped:" destination="-1" eventType="touchUpInside" id="eUy-BP-bNz"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Erro" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVk-fc-5EP">
+                            <rect key="frame" x="0.0" y="180" width="334" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="BDw-BL-7fT" firstAttribute="height" secondItem="Llx-EF-ISL" secondAttribute="height" id="Cag-E2-z26"/>
+                        <constraint firstItem="CDP-ai-JnU" firstAttribute="height" secondItem="Llx-EF-ISL" secondAttribute="height" id="bxi-FT-BYk"/>
+                        <constraint firstItem="HVk-fc-5EP" firstAttribute="height" secondItem="Llx-EF-ISL" secondAttribute="height" id="xlX-9V-rVO"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="HLh-Ag-oIC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="HLh-Ag-oIC" firstAttribute="trailing" secondItem="FnW-vM-2eB" secondAttribute="trailing" constant="40" id="Tzh-cW-oSa"/>
+                <constraint firstItem="FnW-vM-2eB" firstAttribute="leading" secondItem="HLh-Ag-oIC" secondAttribute="leading" constant="40" id="V7J-vj-2Zx"/>
+                <constraint firstItem="FnW-vM-2eB" firstAttribute="top" secondItem="HLh-Ag-oIC" secondAttribute="top" constant="40" id="hMF-BO-B3F"/>
+            </constraints>
+            <point key="canvasLocation" x="133" y="87"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -10,13 +10,21 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var navigation: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        
+        let baseViewModel = BaseViewModel(coordinator: self)
+        let baseVC = BaseViewController(viewModel: baseViewModel)
+        navigation = UINavigationController(rootViewController: baseVC)
+        
+        window?.rootViewController = navigation
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -48,5 +56,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+extension SceneDelegate: RootCoordinator {
+    func navigateToSignup() {
+        let viewModel = SignUpViewModel(coordinator: self)
+        let signupVC = SignUpViewController(viewModel: viewModel)
+        navigation?.pushViewController(signupVC, animated: true)
+    }
+    
+    func navigateToLogin() {
+        let viewModel = LoginViewModel(coordinator: self)
+        let loginVC = LoginViewController(viewModel: viewModel)
+        navigation?.pushViewController(loginVC, animated: true)
+    }
+    
+    func navigateToHome() {
+        let viewModel = HomeViewModel()
+        let homeVC = HomeViewController(viewModel: viewModel)
+        navigation?.pushViewController(homeVC, animated: true)
+    }
 }
 

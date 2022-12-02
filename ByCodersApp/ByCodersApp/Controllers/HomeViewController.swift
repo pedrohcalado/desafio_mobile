@@ -7,20 +7,32 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+//import CoreLocation
 
-final class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+final class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, Storyboarded {
     @IBOutlet weak var mapView: MKMapView!
     
     private var locationManager: CLLocationManager!
     private var currentLocation: CLLocation?
-    private let sqliteService = SQLiteService()
+    
+    private var viewModel: HomeViewModelProtocol?
+    
+    init(viewModel: HomeViewModelProtocol) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configLocation()
-        saveUserLocation()
+        viewModel?.saveUserLocation(
+            latitude: locationManager.location?.coordinate.latitude,
+            longitude: locationManager.location?.coordinate.longitude)
     }
     
     private func configLocation() {
@@ -36,16 +48,7 @@ final class HomeViewController: UIViewController, CLLocationManagerDelegate, MKM
         }
     }
     
-    private func saveUserLocation() {
-        sqliteService.dropTables()
-        sqliteService.initTables()
-        guard let lat = locationManager.location?.coordinate.latitude,
-              let long = locationManager.location?.coordinate.longitude,
-              let uid = UserDefaults.standard.string(forKey: "uid") else { return }
-        let userLocation = UserLocation(uid: uid, latitude: String(lat), longitude: String(long))
-        _ = sqliteService.createUserLocation(userLocation: userLocation)
-    }
-
+    
     
     // MARK: - Location manager delegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
