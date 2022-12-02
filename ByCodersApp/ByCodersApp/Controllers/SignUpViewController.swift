@@ -18,6 +18,7 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
     init(viewModel: SignUpViewModelProtocol) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
+        self.viewModel?.showError = self.showErrorMessage
     }
     
     required init?(coder: NSCoder) {
@@ -28,20 +29,9 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setupDelegates()
         hideErrorMessage()
-        
-        viewModel?.showError = self.showErrorMessage
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
-        let error = viewModel?.validateFields(
-            email: emailTextField.text,
-            password: passwordTextField.text)
-        
-        if let error = error {
-            showErrorMessage(error)
-            return
-        }
-        
         hideErrorMessage()
         viewModel?.createUser(email: emailTextField.text!, password: passwordTextField.text!)
     }

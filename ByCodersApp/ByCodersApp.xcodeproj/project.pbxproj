@@ -37,6 +37,7 @@
 		65D175C3293A203800A247E3 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175C2293A203800A247E3 /* FirebaseService.swift */; };
 		65D175C6293A28AD00A247E3 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175C5293A28AD00A247E3 /* SignUpViewControllerTests.swift */; };
 		65D175C9293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175C8293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift */; };
+		65D175CB293A322300A247E3 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175CA293A322200A247E3 /* UIButton+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		65D175C2293A203800A247E3 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		65D175C5293A28AD00A247E3 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		65D175C8293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		65D175CA293A322200A247E3 /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				65D175C8293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift */,
+				65D175CA293A322200A247E3 /* UIButton+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			files = (
 				65D175C6293A28AD00A247E3 /* SignUpViewControllerTests.swift in Sources */,
 				65D175C9293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				65D175CB293A322300A247E3 /* UIButton+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

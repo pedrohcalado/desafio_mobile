@@ -10,7 +10,6 @@ import Firebase
 
 protocol SignUpViewModelProtocol {
     func createUser(email: String, password: String)
-    func validateFields(email: String?, password: String?) -> String?
     var showError: ((String) -> Void)? { get set }
 }
 
@@ -24,25 +23,29 @@ class SignUpViewModel: SignUpViewModelProtocol {
     }
     
     func createUser(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
-            if let _ = error {
-                self?.showError?("Ocorreu um erro ao criar o usuário. Por favor, tente novamente.")
-                return
-            } else {
-                let db = Firestore.firestore()
-                db.collection("users").addDocument(data: [
-                    "email": email,
-                    "password": password,
-                    "uid": result!.user.uid
-                ]) { [weak self] error in
-                    if let _ = error { self?.showError?("Erro ao salvar dados do usuário.") }
+        if let error = validateFields(email: email, password: password) {
+            showError?(error)
+        } else {
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+                if let _ = error {
+                    self?.showError?("Ocorreu um erro ao criar o usuário. Por favor, tente novamente.")
+                    return
+                } else {
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: [
+                        "email": email,
+                        "password": password,
+                        "uid": result!.user.uid
+                    ]) { [weak self] error in
+                        if let _ = error { self?.showError?("Erro ao salvar dados do usuário.") }
+                    }
+                    self?.coordinator?.navigateToLogin()
                 }
-                self?.coordinator?.navigateToLogin()
             }
         }
     }
     
-    func validateFields(email: String?, password: String?) -> String? {
+    private func validateFields(email: String?, password: String?) -> String? {
         let emailCleaned = email?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let passwordCleaned = password?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
