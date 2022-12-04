@@ -7,7 +7,6 @@
 
 import UIKit
 import MapKit
-//import CoreLocation
 
 final class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
@@ -47,8 +46,6 @@ final class HomeViewController: UIViewController, CLLocationManagerDelegate, MKM
             locationManager.startUpdatingLocation()
         }
     }
-    
-    
     
     // MARK: - Location manager delegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
