@@ -39,6 +39,7 @@
 		65D175CB293A322300A247E3 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175CA293A322200A247E3 /* UIButton+TestHelpers.swift */; };
 		65D175CE293A3E2300A247E3 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175CD293A3E2300A247E3 /* LoginViewControllerTests.swift */; };
 		65D175D0293CAA3D00A247E3 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175CF293CAA3D00A247E3 /* Validations.swift */; };
+		65D175D3293CACC600A247E3 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D175D2293CACC600A247E3 /* HomeViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		65D175CA293A322200A247E3 /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 		65D175CD293A3E2300A247E3 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		65D175CF293CAA3D00A247E3 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		65D175D2293CACC600A247E3 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		65A45117293500FD0084F70F /* ByCodersAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				65D175D1293CACAF00A247E3 /* Home */,
 				65D175CC293A3CA300A247E3 /* Login */,
 				65D175C7293A2D9C00A247E3 /* Helpers */,
 				65D175C4293A288300A247E3 /* SignUp */,
@@ -253,6 +256,14 @@
 				65D175CD293A3E2300A247E3 /* LoginViewControllerTests.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		65D175D1293CACAF00A247E3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				65D175D2293CACC600A247E3 /* HomeViewControllerTests.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D175D3293CACC600A247E3 /* HomeViewControllerTests.swift in Sources */,
 				65D175CE293A3E2300A247E3 /* LoginViewControllerTests.swift in Sources */,
 				65D175C6293A28AD00A247E3 /* SignUpViewControllerTests.swift in Sources */,
 				65D175C9293A2DC500A247E3 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
