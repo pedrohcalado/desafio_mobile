@@ -9,12 +9,12 @@ import FirebaseFirestore
 import Firebase
 
 protocol LoginServiceProtocol {
-    typealias Result = Swift.Result<AuthDataResult?, Error>
+    typealias Result = Swift.Result<UserData?, Error>
     func login(email: String, password: String, completion: @escaping (Result) -> Void)
 }
 
 protocol SignUpServiceProtocol {
-    typealias Result = Swift.Result<AuthDataResult?, Error>
+    typealias Result = Swift.Result<UserData?, Error>
     func createUser(email: String, password: String, completion: @escaping (Result) -> Void)
 }
 
@@ -33,8 +33,10 @@ class FirebaseService: LoginServiceProtocol, SignUpServiceProtocol {
             if let _ = error {
                 completion(.failure(FirebaseService.Error.invalidData))
             } else {
-                self?.sendLoginAnalyticsEvent(uid: result?.user.uid ?? "", email: result?.user.email ?? "")
-                completion(.success(result))
+                let uid = result?.user.uid ?? ""
+                let email = result?.user.email ?? ""
+                self?.sendLoginAnalyticsEvent(uid: uid, email: email)
+                completion(.success(UserData(uid: uid, email: email)))
             }
         }
     }
@@ -71,4 +73,10 @@ class FirebaseService: LoginServiceProtocol, SignUpServiceProtocol {
             completion(.success(.none))
         }
     }
+}
+
+struct UserData {
+    var uid: String
+    var email: String
+    var password: String?
 }

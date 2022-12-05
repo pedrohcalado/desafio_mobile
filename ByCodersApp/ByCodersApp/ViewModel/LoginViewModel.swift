@@ -29,7 +29,7 @@ class LoginViewModel: LoginViewModelProtocol {
             service?.login(email: email, password: password) { [weak self] result in
                 switch result {
                 case .success(let data):
-                    self?.saveLoginDataInUserDefaults(uid: data!.user.uid)
+                    self?.saveLoginDataInUserDefaults(uid: data?.uid ?? "")
                     self?.coordinator?.navigateToHome()
                 case .failure:
                     self?.showError?("Ocorreu um erro ao fazer login. Por favor, tente novamente.")
