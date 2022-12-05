@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		656041A6293E0B34000C3F50 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656041A5293E0B34000C3F50 /* LoginViewModelTests.swift */; };
 		65A0509229362B2500D53064 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0509129362B2500D53064 /* String+Utilities.swift */; };
 		65A05098293635F000D53064 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 65A05097293635F000D53064 /* FirebaseAnalytics */; };
 		65A0509A293635F000D53064 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 65A05099293635F000D53064 /* FirebaseAuth */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		656041A5293E0B34000C3F50 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		65A0509129362B2500D53064 /* String+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		65A050A029363AFF00D53064 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		65A450FE293500F80084F70F /* ByCodersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByCodersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				65D175CD293A3E2300A247E3 /* LoginViewControllerTests.swift */,
+				656041A5293E0B34000C3F50 /* LoginViewModelTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				656041A6293E0B34000C3F50 /* LoginViewModelTests.swift in Sources */,
 				65D175D3293CACC600A247E3 /* HomeViewControllerTests.swift in Sources */,
 				65D175CE293A3E2300A247E3 /* LoginViewControllerTests.swift in Sources */,
 				65D175C6293A28AD00A247E3 /* SignUpViewControllerTests.swift in Sources */,
