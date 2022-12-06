@@ -74,7 +74,8 @@ extension SceneDelegate: RootCoordinator {
     }
     
     func navigateToHome() {
-        let viewModel = HomeViewModel()
+        let service = SQLiteService()
+        let viewModel = HomeViewModel(service: service)
         let homeVC = HomeViewController(viewModel: viewModel)
         navigation?.pushViewController(homeVC, animated: true)
     }

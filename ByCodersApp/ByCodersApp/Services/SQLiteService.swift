@@ -26,7 +26,6 @@ class SQLiteService: SQLiteServiceProtocol {
         do {
             let db = try Connection(fileName())
             let usersLocation = Table("usersLocation");
-//            try db.run(usersLocation.insert())
             
             let rowId = try db.run(usersLocation.insert(
                 uid <- userLocation.uid,

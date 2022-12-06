@@ -15,6 +15,10 @@ class HomeViewModel: HomeViewModelProtocol {
     weak var coordinator: RootCoordinator?
     private var sqliteService: SQLiteServiceProtocol?
     
+    init(service: SQLiteServiceProtocol) {
+        self.sqliteService = service
+    }
+    
     func saveUserLocation(latitude: Double?, longitude: Double?) {
         guard let sqliteService = sqliteService else {
             return
